@@ -1,14 +1,18 @@
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
-/*    Author:       TJU-CodeWeavers                                           */
-/*    Created:      2023/11/1 23:12:20                                        */
-/*    Description:  tjulib for V5 project                                     */
+/*    Author:       NEW-TJU-LIB-EDU                                           */
+/*    Created:      2025.6.1                                                  */
+/*    Description:  tjulib新生赛版本                                           */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
+/*提示：在此main.cpp文件,你应当只修改以下部分:
+    1.必要的头文件引入,不应该删除vex.h和tjulib.h
+    2.PID参数的配置
+    3.函数pre_auton()，autonomous()和usercontrol()的内容
+*/
+
 #include "vex.h"
 #include "tjulib.h"
-#include <random>
-#include <string>
 
 using namespace vex;
 using namespace tjulib;
@@ -37,9 +41,12 @@ competition Competition;
     stop_num               (int_type)
 */
 
-pidParams fwd_pid(0, 0, 0, 0, 0, 0, 0), 
-    turn_pid(0, 0, 0, 0, 0, 0, 0);                            
-
+pidParams fwd_pid(0, 0, 0, 0, 0, 0, 0),  //往前直行一段指定距离所使用的PID参数
+    turn_pid(0, 0, 0, 0, 0, 0, 0);       //转向指定角度所使用的PID参数                     
+                                         //这里的PID参数需要根据实际情况进行调整,调PID是重要环节
+                                         //一个可能的PID参数配置是(不准确,只是表示每个参数对应的数量级)：
+                                         //pid(3, 0.1, 0.05, 0.5, 1, 10, 10);
+                                         
 /*************************************
 
         Instance for control
@@ -103,7 +110,7 @@ void autonomous()
  **************************/
 void usercontrol()
 {
-    // lumbda表达式
+    // lambda表达式
     // 这个lambda表达式作为Controller1.ButtonDown.pressed()方法的参数传递，
     // 表示当按钮被按下时要执行的回调函数
     // 也就是，这里按下buttonDown按钮时，就会执行这个lambda表达式中的代码

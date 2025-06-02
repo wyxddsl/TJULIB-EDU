@@ -1,3 +1,6 @@
+//提示：robot-config.h文件用来对你在robot-config.cpp文件中定义的机器人相关参数进行声明
+
+#pragma once
 using namespace vex;
 /*************************************
 

@@ -1,5 +1,7 @@
 #include "pidControl.hpp"
 
+//提示：在此pidControl.cpp文件,你应当只修改pidCalcu方法,自行完成微分项计算和输出速度的公式
+
 namespace tjulib
 {   
     // 用于反映当前的pid控制是否在结果容差范围内停留了足够的时间
@@ -57,11 +59,11 @@ namespace tjulib
                 integral = integralPowerLimit;
 
             // 微分项的计算：近似为当前误差和上个pid循环误差的差值
-            // 自行填写
+            // 自行填写 derivative = ...;
             derivative = 0; 
 
             // pid控制器的核心部分，通过pid公式计算速度
-            // 自行填写
+            // 自行填写,speed = ...;
             speed = 0;
 
              // 把最高速度限制在maxSpeed范围内

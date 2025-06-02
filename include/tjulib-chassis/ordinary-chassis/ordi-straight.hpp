@@ -1,8 +1,15 @@
+// 此文件实现了一个直线运动的底盘类，继承自Ordi_BaseChassis类，并实现了直线移动和转向功能。
+// 你应当修改以下部分:
+// 1.根据自学知识补全moveInches方法,学习控制器的编写方法
+// 2.模仿moveInches方法,编写turnToAngle方法,
+//   你的turnToAngle应当是转向指定角度,在编写控制器时,你的反馈量可以从imu中获取
+
 #pragma once
 #include "tjulib-chassis/ordinary-chassis/ordi-base.hpp"
 #include "tjulib-position/Position.hpp"
 
 extern double zero_drift_error;
+
 
 namespace tjulib
 {
