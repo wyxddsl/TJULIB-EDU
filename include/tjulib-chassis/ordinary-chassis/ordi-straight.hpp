@@ -26,9 +26,9 @@ namespace tjulib
 
     protected:
     public:
-        Ordi_StraChassis(std::vector<std::vector<vex::motor *> *> &_chassisMotors,pidControl *_fwdpid, pidControl *_turnpid)
+        Ordi_StraChassis(std::vector<std::vector<vex::motor *> *> &_chassisMotors,pidControl *_fwdpid, pidControl *_turnpid,Position *_position)
             : Ordi_BaseChassis(_chassisMotors, _fwdpid, _turnpid),
-              fwdControl(_fwdpid), turnControl(_turnpid) {}
+              fwdControl(_fwdpid), turnControl(_turnpid), position(_position) {}
 
         // 把角度转换到360度以内
         double getWrap360(double currentAngle)
